@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Sample data for different subjects
     const subjectData = {
-        math: {
+        mat_103: {
             title: "MAT 103 Updates",
             updates: [
                 {
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
-        physics: {
+        tec_112: {
             title: "TEC 112 Updates",
             updates: [
                 {
@@ -145,16 +145,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     title: "LABS",
                     date: "2025-06-27",
                     content: "Hope you all managed to collect your lab reports."
-                },
-                {
-                    title: "LABS",
-                    date: "2025-06-27",
-                    content: "Hope you all managed to collect your lab reports."
                 }
             ],
             hasAssignment: true
         },
-        chemistry: {
+        sta_102: {
             title: "STA 102 Updates",
             updates: [
                 {
@@ -164,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
-        biology: {
+        cpe_122: {
             title: "CPE 122 Updates",
             updates: [
                 {
@@ -180,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             hasAssignment: true
         },
-        english: {
+        ite_125: {
             title: "ITE 125 Updates",
             updates: [
                 {
@@ -196,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             hasAssignment: true
         },
-        history: {
+        mpe_126: {
             title: "MPE 126 Updates",
             updates: [
                 {
@@ -212,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             hasAssignment: true
         },
-        programming: {
+        csc_121: {
             title: "CSC 121 Updates",
             updates: [
                 {
@@ -258,19 +253,19 @@ document.addEventListener('DOMContentLoaded', function () {
             showMainContent();
 
             // Mark subjects as seen if they're the current subject
-            if (subject === 'physics') {
+            if (subject === 'tec_112') {
                 tecBadge.style.display = 'none';
                 localStorage.setItem('tec112Seen', 'true');
             }
-            if (subject === 'biology') {
+            if (subject === 'cpe_122') {
                 cpeBadge.style.display = 'none';
                 localStorage.setItem('cpe122Seen', 'true');
             }
-            if (subject === 'history') {
+            if (subject === 'mpe_126') {
                 mpeBadge.style.display = 'none';
                 localStorage.setItem('mpe126Seen', 'true');
             }
-            if (subject === 'english') {
+            if (subject === 'ite_125') {
                 iteBadge.style.display = 'none';
                 localStorage.setItem('ite125Seen', 'true');
             }
@@ -305,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const subject = link.getAttribute('data-subject');
             if (subjectData[subject] && subjectData[subject].updates[0] && new Date(subjectData[subject].updates[0].date) > new Date(lastVisit)) {
                 // Add NEW badge
-                if (!link.querySelector('.new-badge') && (subject === 'physics' || subject === 'biology' || subject === 'history')) {
+                if (!link.querySelector('.new-badge') && (subject === 'tec_112' || subject === 'cpe_122' || subject === 'mpe_126')) {
                     const badge = document.createElement('span');
                     badge.className = 'new-badge';
                     badge.textContent = 'NEW';
@@ -357,8 +352,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Initialize with Mathematics content
-    updateContent('math');
+    // Initialize with mat_103ematics content
+    updateContent('mat_103');
     checkForUpdates();
 });
 
