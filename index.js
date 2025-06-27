@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mpeBadge.style.display = 'none';
     }
     if (localStorage.getItem('ite125Seen')) {
-        mpeBadge.style.display = 'none';
+        iteBadge.style.display = 'none';
     }
 
     // Check if user has seen the menu
