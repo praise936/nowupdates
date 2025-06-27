@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const subject = link.getAttribute('data-subject');
             if (subjectData[subject] && subjectData[subject].updates[0] && new Date(subjectData[subject].updates[0].date) > new Date(lastVisit)) {
                 // Add NEW badge
-                if (!link.querySelector('.new-badge') && (subject === 'tec_112' || subject === 'cpe_122' || subject === 'mpe_126')) {
+                if (!link.querySelector('.new-badge') && (subject === 'tec_112' || subject === 'ite_125' || subject === 'cpe_122' || subject === 'mpe_126')) {
                     const badge = document.createElement('span');
                     badge.className = 'new-badge';
                     badge.textContent = 'NEW';
